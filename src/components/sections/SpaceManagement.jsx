@@ -19,8 +19,8 @@ export default function SpaceManagement() {
         <p>
           Spaces are your private sanctuary—a place for you and your partner to
           create beautiful memories and grow deeper in love, every day. 💖 And
-          don't worry, you can only create one space—because we believe in true
-          love, not double dating! 😄
+          don&#39;t worry, you can only create one space—because we believe in
+          true love, not double dating! 😄
         </p>
       </div>
     </div>

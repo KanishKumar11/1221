@@ -8,12 +8,12 @@
   "description": "The Song Recommender App",
   "icons": [
     {
-      "src": "/images/1.svg",
-      "type": "image/svg",
+      "src": "/logo-192.png",
+      "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/images/1.svg",
+      "src": "/logo-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
