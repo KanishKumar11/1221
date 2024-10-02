@@ -1,0 +1,54 @@
+datasource db {
+  provider = "mongodb"
+  url      = env("MONGODB_URI")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id        String      @id @default(auto()) @map("_id") @db.ObjectId
+  name      String?
+  email     String      @unique
+  image     String?
+  spaces    UserSpace[] // Explicit many-to-many relation with Space via UserSpace
+  songs     Song[]
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+}
+
+model Space {
+  id        String      @id @default(auto()) @map("_id") @db.ObjectId
+  spaceName String
+  users     UserSpace[] // Explicit many-to-many relation with User via UserSpace
+  songs     Song[]
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+}
+
+model Song {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  title      String
+  artist     String
+  coverUrl   String
+  spotifyUrl String
+  comment    String?
+  user       User     @relation(fields: [userId], references: [id])
+  userId     String   @db.ObjectId
+  space      Space    @relation(fields: [spaceId], references: [id])
+  spaceId    String   @db.ObjectId
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+// Linking table for many-to-many relationship between User and Space
+model UserSpace {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String   @db.ObjectId
+  space     Space    @relation(fields: [spaceId], references: [id])
+  spaceId   String   @db.ObjectId
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

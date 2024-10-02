@@ -1,0 +1,21 @@
+{
+  "name": "1221 | The Song Recommender App",
+  "short_name": "1221",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#eee",
+  "theme_color": "#000000",
+  "description": "The Song Recommender App",
+  "icons": [
+    {
+      "src": "/images/1.svg",
+      "type": "image/svg",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/1.svg",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
