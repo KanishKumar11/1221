@@ -13,7 +13,7 @@ export default function Home({ spaceId, user }) {
   };
 
   return (
-    <div className="flex min-h-screen w-full sm:max-w-lg bg-gradient-to-b from-[#79c3de] to-white via-white mx-auto flex-col p-5">
+    <div className="flex min-h-screen w-full sm:max-w-lg bg-gradient-to-b from-[#79c3de] to-white via-white mx-auto flex-col p-5 relative pb-28">
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl">Hey {user.name}</h1>
