@@ -21,7 +21,11 @@ export default async function Page() {
     <main className="min-h-screen">
       <BackgroundBeamsWithCollision>
         {userSpaces.length > 0 ? (
-          <Home spaceId={userSpaces[0]._id.toString()} user={session.user} />
+          <Home
+            spaces={userSpaces}
+            spaceId={userSpaces[0]._id.toString()}
+            user={session.user}
+          />
         ) : (
           <SpaceManagement />
         )}

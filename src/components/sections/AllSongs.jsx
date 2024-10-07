@@ -21,7 +21,7 @@ export default function AllSongs({ spaceId }) {
     }
 
     loadSongs();
-  }, []);
+  }, [spaceId]);
 
   if (isLoading) return <div>Loading...</div>;
   // if (error) return <div>{error}</div>;
