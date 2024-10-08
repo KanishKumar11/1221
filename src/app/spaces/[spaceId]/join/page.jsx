@@ -45,6 +45,7 @@ export default function JoinSpace({ params }) {
     try {
       await axios.post(`/api/spaces/${params.spaceId}/join`);
       toast.success("You have successfully joined the space.");
+      localStorage.setItem("activeSpace", params.spaceId);
       router.push(`/`);
     } catch (error) {
       toast.error(
@@ -68,7 +69,6 @@ export default function JoinSpace({ params }) {
             <>
               <div className="bg-black text-white py-5 rounded-2xl text-center flex items-center justify-center gap-4">
                 <div className="flex">
-                  {/* Display user images from the space's users */}
                   {userDetails.map((user, index) => (
                     <Image
                       key={user.user._id}
