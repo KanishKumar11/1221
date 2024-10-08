@@ -67,7 +67,7 @@ export function RecommendSong({ spaceId }) {
 
   return (
     <>
-      <div className="fixed bottom-0 flex items-center justify-center w-full left-0 bg-white/40 backdrop-blur-xl p-4">
+      <div className="fixed bottom-12 flex items-center justify-center w-full  bg-white/40 backdrop-blur-xl p-4 max-w-lg mx-auto left-1/2 -translate-x-1/2">
         <Button
           className="w-[80%] text-xl px-14 py-7"
           onClick={() => setIsOpen(true)}

@@ -11,6 +11,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
+import Dock from "../Dock";
 
 export default function Home({ spaces, spaceId, user }) {
   const [activeSpace, setActiveSpace] = useState(
@@ -80,8 +81,11 @@ export default function Home({ spaces, spaceId, user }) {
         {activeTab === "recent" && <RecentSongs spaceId={activeSpace} />}
         {activeTab === "all" && <AllSongs spaceId={activeSpace} />}
       </div>
-      <div className="mt-auto mx-auto">
+      <div className="mt-auto mx-auto mb-20">
         <RecommendSong spaceId={activeSpace} />
+      </div>
+      <div className="bg-red-400 mx-auto w-full">
+        <Dock />
       </div>
     </div>
   );
