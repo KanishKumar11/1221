@@ -104,7 +104,10 @@ export default function CreateSpace() {
 
             <div className="flex gap-4 mt-6">
               <Button
-                onClick={() => router.push(`/spaces/${createdSpace.data._id}`)}
+                onClick={() => {
+                  router.push(`/`);
+                  localStorage.setItem("activeSpace", createdSpace.data._id);
+                }}
                 className="w-full font-medium text-lg py-4"
               >
                 View Space
